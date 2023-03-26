@@ -6,26 +6,30 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:34:20 by flafi             #+#    #+#             */
-/*   Updated: 2023/03/20 19:41:06 by flafi            ###   ########.fr       */
+/*   Updated: 2023/03/25 00:55:39 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *memchr(const void *s, int c, size_t n)
+#include "libft.h"
+void *ft_memchr(const void *s, int c, size_t n)
 {
     void *ptr;
-
+    unsigned char chr;
+    int i;
+  
+    i = 0;
     ptr = NULL;
-    while(n)
+    while(n--)
     {
-        if(*s == c)
+      chr = ((unsigned char *) s)[i];
+        if(chr == (unsigned char) c)
         {
-            ptr = s;
-            return (ptr);
+            return((void *)s);
         }
         else
         {
-            s++;
-            n--;
+          i++;
+          s++;
         }
     }
     return (ptr);

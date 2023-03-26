@@ -6,13 +6,13 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 19:41:38 by flafi             #+#    #+#             */
-/*   Updated: 2023/03/19 19:59:07 by flafi            ###   ########.fr       */
+/*   Updated: 2023/03/25 02:37:52 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strlen(const char *s)
+size_t ft_strlen(const char *s)
 {
     int counter;
 

@@ -11,7 +11,7 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memset(void *s, int c, size_t len);
 int	ft_isalnum(int c);
 int	ft_isprint(int c);
-//void *ft_memchr(const void *s, int c, size_t n);
+void *ft_memchr(const void *s, int c, size_t n);
 char *ft_strchr(const char *s, int c);
 char *ft_strrchr(const char *s, int c);
 size_t ft_strlen(const char *s);

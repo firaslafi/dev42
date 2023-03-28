@@ -19,5 +19,6 @@ int ft_strncmp(const char *s1, const char *s2, size_t n);
 //size_t strlcpy(char * dst, const char * src, size_t dstsize);
 void *ft_memcpy(void *dst, const void *src, size_t n);
 int ft_atoi(const char *str);
+size_t ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 #endif

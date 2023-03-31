@@ -6,7 +6,7 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 19:41:38 by flafi             #+#    #+#             */
-/*   Updated: 2023/03/25 02:37:52 by flafi            ###   ########.fr       */
+/*   Updated: 2023/03/31 03:59:16 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t ft_strlen(const char *s)
 {
-    int counter;
+    size_t counter;
 
     counter = 0;
     while(*s)

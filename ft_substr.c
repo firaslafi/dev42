@@ -1,35 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/25 22:16:16 by flafi             #+#    #+#             */
-/*   Updated: 2023/04/02 01:59:52 by flafi            ###   ########.fr       */
+/*   Created: 2023/04/02 01:23:17 by flafi             #+#    #+#             */
+/*   Updated: 2023/04/02 01:23:52 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t ft_strlcpy(char * dst, const char * src, size_t dstsize)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-  size_t i;
-  size_t j;
-  size_t init_dstsize;
-  
-  init_dstsize = ft_strlen(dst);
-  i = 0;
-  j = 0;
-  if(dstsize == 0)
-    return(ft_strlen(src));
-  while(src[i] != '\0' && j < (dstsize - 1))
-    {
-      dst[j] = src[i];
-      j++;
-      i++;
-    }
-  if(i < dstsize)
-    dst[j] = '\0';
-  return (ft_strlen(src));
+    x
 }

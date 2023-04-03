@@ -6,7 +6,7 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 03:10:59 by flafi             #+#    #+#             */
-/*   Updated: 2023/04/03 07:26:44 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/04 01:55:28 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ size_t ft_end(char const *s1, char const *set)
     if(!ft_strchr(set, s1[i]))
       return (i);
     i--;
+    if(i==0)
+      {return(i);
+      break;}
     }
   return (i);
 }
@@ -44,16 +47,22 @@ char *ft_strtrim(char const *s1, char const *set)
   size_t startpos;
   size_t endpos;
   size_t i;
+  size_t j;
   i = 0;
   lens1 = ft_strlen(s1);
   startpos = ft_start(s1, set);
   endpos = ft_end(s1, set);
+  j = startpos;
+  if (startpos == lens1 && i == 0)
+    return(ft_strdup(""));
   result = malloc(((endpos - startpos) + 2));
   if (!result)
     return(NULL);
-  while(i <= endpos)
+  if (ft_strlen(s1) == 0 )
+    return(result);
+  while(i <= (endpos - startpos))
     {
-      result[i++] = s1[startpos++];
+      result[i++] = s1[j++];
     }
   result[i] = '\0'; 
   return (result);

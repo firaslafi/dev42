@@ -6,7 +6,7 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 03:10:19 by flafi             #+#    #+#             */
-/*   Updated: 2023/04/04 08:21:14 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/05 10:37:48 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,26 +26,19 @@ int ft_nalloc(int n)
   return (i+1);
 }
 
-char *ft_reverse(char *s, int num)
-{
-  size_t i;
-  size_t len;
-  char tmp[10];
-  len = num;
-  i = 0;
-
-  while(len-- > 0)
-    {
-      tmp[i] = s[len];
-      i++;
-    }
-  i = 0;
-  while(num--)
-    {
-      s[i] = tmp[i];
-      i++;
-    }
-  return (s);
+char *ft_reverse(char *s, int num) 
+{ 
+  size_t i = 0;
+  size_t len = num;
+  char tmp;
+ while (i < len / 2)
+   {
+     tmp = s[i];
+     s[i] = s[len - i - 1];
+     s[len - i - 1] = tmp;
+     i++;
+   } 
+ return (s);
 }
 
 
@@ -85,6 +78,10 @@ char *ft_itoa(int n)
   s = ft_reverse(s, num);
   s[i] = '\0';
   if(sign == -1)
-    return(ft_strjoin("-",s));
+  {
+    //i = ft_strlcat("-",s,num +1);
+    //return(s);
+    return(ft_strjoin("-", s));
+  }
   return(s);
 }

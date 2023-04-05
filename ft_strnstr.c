@@ -6,50 +6,41 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 03:33:18 by flafi             #+#    #+#             */
-/*   Updated: 2023/04/05 16:22:34 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/05 17:21:08 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
+  size_t needle_length;
+  size_t haystack_length;
   size_t i;
   size_t j;
-  size_t needlength;
-  size_t found;
-  char *result;
+  needle_length = ft_strlen(needle);
+  haystack_length = ft_strlen(haystack);
   i = 0;
-  j = 0;
-  found = 0;
-  needlength = ft_strlen(needle);
-  if(ft_strlen(needle) == 0)
+  if(needle_length == 0)
     return ((char *)haystack);
-  if(len <= 0 || len < needlength)
+
+  if(haystack_length < needle_length || len < needle_length)
     return (NULL);
-  while(i < len)
+  
+  while( i < len - needle_length + 1)
   {
-    if(haystack[i] != needle[j])
-      i++;
-    else
+    if(haystack[i] == needle[0])
     {
       j = 0;
-      while(haystack[i] == needle[j])
-        {
-          if(j == needlength - 1)
-          {
-            found = 1;
-            result = (char *)&haystack[i-j];
-            break;
-          }
-          i++;
-          j++;
-        }
-        if (found)
-         break;
+      while(j < needle_length)
+      {
+        if (haystack[i + j] != needle[j])
+          break;
+        j++;  
+      }
+      if (j == needle_length)
+       return ((char *)(haystack + i));
     }
+    i++;
   }
-  if (!found)
-    return(NULL);
-  else
-    return(result);
+  return(NULL);
 }

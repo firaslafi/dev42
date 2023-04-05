@@ -6,12 +6,12 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 03:10:19 by flafi             #+#    #+#             */
-/*   Updated: 2023/04/05 10:37:48 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/05 17:24:46 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int ft_nalloc(int n)
+static int ft_nalloc(int n)
 {
   int i;
 
@@ -26,7 +26,7 @@ int ft_nalloc(int n)
   return (i+1);
 }
 
-char *ft_reverse(char *s, int num) 
+static char *ft_reverse(char *s, int num) 
 { 
   size_t i = 0;
   size_t len = num;

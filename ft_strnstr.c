@@ -6,7 +6,7 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 03:33:18 by flafi             #+#    #+#             */
-/*   Updated: 2023/04/05 14:06:23 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/05 16:22:34 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
   j = 0;
   found = 0;
   needlength = ft_strlen(needle);
-  if(len <= 0)
-    return (NULL);
-  if(!needle)
+  if(ft_strlen(needle) == 0)
     return ((char *)haystack);
+  if(len <= 0 || len < needlength)
+    return (NULL);
   while(i < len)
   {
     if(haystack[i] != needle[j])

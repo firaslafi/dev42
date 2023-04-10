@@ -40,7 +40,7 @@ void ft_putstr_fd(char *s, int fd);
 void ft_putendl_fd(char *s, int fd);
 void ft_putnbr_fd(int n, int fd);
 char *ft_strnstr(const char *haystack, const char *needle, size_t len);
-//char **ft_split(char const *s, char c);
+char **ft_split(char const *s, char c);
 t_list *ft_lstnew(void *content);
 void ft_lstadd_front(t_list **lst, t_list *new);
 

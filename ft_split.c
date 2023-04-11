@@ -6,13 +6,26 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:26:52 by flafi             #+#    #+#             */
-/*   Updated: 2023/04/10 23:00:31 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/11 16:23:27 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-size_t word_count(char const *s, char c)
+static char *ft_strncpy(char * dst, const char * src, size_t len)
+{
+  size_t i;
+
+  i = 0;
+  if (len == 0)
+    return(dst);
+  while(len--)
+    {
+      dst[i] = src[i];
+      i++;
+    }
+  return(dst);
+}
+static size_t word_count(char const *s, char c)
 {
   size_t i;
   size_t wc;
@@ -41,7 +54,7 @@ size_t word_count(char const *s, char c)
   return wc;
 }
 
-size_t word_len(const char *s, size_t i, char c)
+static size_t word_len(const char *s, size_t i, char c)
 {
   size_t len = 0;
 
@@ -91,7 +104,7 @@ char **ft_split(char const *s, char c) {
     }
     while (s[i] == c)
       i++;
-    strncpy(chr, &s[i], wl);
+    ft_strncpy(chr, &s[i], wl);
     chr[wl] = '\0';
     i += wl;
     ptr[index] = chr;

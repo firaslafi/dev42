@@ -6,7 +6,7 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 22:16:16 by flafi             #+#    #+#             */
-/*   Updated: 2023/04/02 01:59:52 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/12 23:38:56 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ size_t ft_strlcpy(char * dst, const char * src, size_t dstsize)
 {
   size_t i;
   size_t j;
-  size_t init_dstsize;
-  
-  init_dstsize = ft_strlen(dst);
+
   i = 0;
   j = 0;
   if(dstsize == 0)
@@ -29,7 +27,6 @@ size_t ft_strlcpy(char * dst, const char * src, size_t dstsize)
       j++;
       i++;
     }
-  if(i < dstsize)
-    dst[j] = '\0';
+  dst[j] = '\0';
   return (ft_strlen(src));
 }

@@ -6,18 +6,19 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 16:49:13 by flafi             #+#    #+#             */
-/*   Updated: 2023/04/11 17:03:02 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/12 22:55:22 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-t_list *ft_lstlast(t_list *lst)
+
+t_list	*ft_lstlast(t_list *lst)
 {
- while(lst)
- {
-    if(!lst->next)
-        return(lst);
-    lst = lst->next;
- }
- return (lst);
+	while (lst)
+	{
+		if (!lst->next)
+			return (lst);
+		lst = lst->next;
+	}
+	return (lst);
 }

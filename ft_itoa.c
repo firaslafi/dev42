@@ -6,7 +6,7 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 03:10:19 by flafi             #+#    #+#             */
-/*   Updated: 2023/04/12 19:11:09 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/12 22:48:11 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,6 @@ static int ft_nalloc(int n)
   }
   return (i+1);
 }
-
-// static char *ft_reverse(char *s, int num) 
-// { 
-//   size_t i = 0;
-//   size_t len = num;
-//   char tmp;
-//  while (i < len / 2)
-//    {
-//      tmp = s[i];
-//      s[i] = s[len - i - 1];
-//      s[len - i - 1] = tmp;
-//      i++;
-//    } 
-//  return (s);
-// }
 
 
 char *ft_itoa(int n)
@@ -62,7 +47,6 @@ char *ft_itoa(int n)
   {
     sign *= -1;
     n *= sign;
-    // i++;
   }
   if(n == 1 || sign > 0)
     s = malloc(num+1);
@@ -77,23 +61,11 @@ char *ft_itoa(int n)
       n = n / 10;
       i--;
     }
-  // s = ft_reverse(s, num);
   s[num + (sign < 0)] = '\0';
   if(sign == -1)
   {
     s[0] = '-';
-    // res = ft_strjoin("-", s);
-    // free(s);
     return (s);
   }
-    // return(ft_strjoin("-", s));
   return(s);
 }
-// int main()
-// {
-//   char *s = ft_itoa(9);
-//   printf("(%d) (%d) (%d)\n", *s, *(s+1), *(s+2));
-//   printf("%s\n", s);
-//   free(s);
-//   // system("leaks a.out");
-// }

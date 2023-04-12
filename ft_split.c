@@ -6,11 +6,12 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:26:52 by flafi             #+#    #+#             */
-/*   Updated: 2023/04/11 16:23:27 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/12 18:35:11 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 static char *ft_strncpy(char * dst, const char * src, size_t len)
 {
   size_t i;

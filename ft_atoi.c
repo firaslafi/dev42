@@ -6,7 +6,7 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 22:54:23 by flafi             #+#    #+#             */
-/*   Updated: 2023/03/28 06:18:57 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/12 18:10:05 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_issign(const char *str)
 }
 
 int	ft_atoi(const char *str)
-	{
+{
 	int	result;
 	int	sign;
 
@@ -41,8 +41,10 @@ int	ft_atoi(const char *str)
 	if (ft_issign(str))
 	{
 		if (*str == '-')
-			{sign *= -1;
-			str++;}
+		{
+		sign *= -1;
+		str++;
+		}
 		else
 			str++;
 	}
@@ -52,4 +54,4 @@ int	ft_atoi(const char *str)
 	str++;
 	}
 	return (result * sign);
-	}
+}

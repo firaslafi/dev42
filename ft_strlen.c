@@ -6,22 +6,21 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 19:41:38 by flafi             #+#    #+#             */
-/*   Updated: 2023/03/31 03:59:16 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/13 03:13:30 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-    size_t counter;
+	size_t	counter;
 
-    counter = 0;
-    while(*s)
-    {
-        s++;
-        counter++;  
-        
-    }
-    return (counter);
+	counter = 0;
+	while (*s)
+	{
+	s++;
+	counter++;
+	}
+	return (counter);
 }

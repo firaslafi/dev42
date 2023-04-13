@@ -6,7 +6,7 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:26:52 by flafi             #+#    #+#             */
-/*   Updated: 2023/04/12 18:35:11 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/13 03:07:36 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,6 @@ static size_t word_len(const char *s, size_t i, char c)
   }
   return (len);
 }
-
-
 
 char **ft_split(char const *s, char c) {
   char *chr;

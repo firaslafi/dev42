@@ -6,20 +6,21 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 16:26:42 by flafi             #+#    #+#             */
-/*   Updated: 2023/04/11 16:43:34 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/14 02:13:25 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int ft_lstsize(t_list *lst)
-{
-int i;
-i = 0;
 
-while(lst != NULL)
-    {
-    i++;
-    lst = lst->next;
-    }
-return (i);
+int	ft_lstsize(t_list *lst)
+{
+	int	i;
+
+	i = 0;
+	while (lst != NULL)
+	{
+	i++;
+	lst = lst->next;
+	}
+	return (i);
 }

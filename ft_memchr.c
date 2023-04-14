@@ -6,30 +6,28 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:34:20 by flafi             #+#    #+#             */
-/*   Updated: 2023/03/27 03:31:36 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/14 02:09:02 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_cmp(char *s, int c)
+int	ft_cmp(char *s, int c)
 {
-    if (*s == (char) c)
-      return (1);
-    else
-      return(0);
+	if (*s == (char) c)
+		return (1);
+	else
+		return (0);
 }
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-    
-    while(n--)
-      {
-        if(ft_cmp((char*)s, c))
-            return((void *)s);
-        else
-          s++;
-      }
-    return (NULL);
-    
+	while (n--)
+	{
+		if (ft_cmp((char *)s, c))
+			return ((void *)s);
+		else
+			s++;
+	}
+	return (NULL);
 }

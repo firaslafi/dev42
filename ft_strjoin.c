@@ -6,7 +6,7 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 04:54:03 by flafi             #+#    #+#             */
-/*   Updated: 2023/04/03 02:41:51 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/14 01:44:46 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ char *ft_strjoin(char const *s1, char const *s2)
     i++;
     }
   result[lens1 + lens2] = '\0';
-  return(result);
+  return (result);
 }

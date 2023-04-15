@@ -6,7 +6,7 @@
 #    By: flafi <flafi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/12 22:04:39 by flafi             #+#    #+#              #
-#    Updated: 2023/04/12 22:29:11 by flafi            ###   ########.fr        #
+#    Updated: 2023/04/15 23:42:21 by flafi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ SRCS = ft_memcmp.c ft_isascii.c ft_isdigit.c ft_isalpha.c ft_toupper.c ft_tolowe
 OBJS = $(SRCS:.c=.o)
 
 SRCS_B = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-	ft_lstdelone.c ft_lstclear.c ft_lstiter.c
+	ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 OBJS_B = $(SRCS_B:.c=.o)
 
 $(NAME): $(OBJS)

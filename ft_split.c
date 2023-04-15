@@ -6,7 +6,7 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:26:52 by flafi             #+#    #+#             */
-/*   Updated: 2023/04/14 02:09:59 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/15 02:25:59 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,11 +94,13 @@ char **ft_split(char const *s, char c) {
   while (wc--) {
     wl = word_len(s, i, c);
     chr = (char *)malloc((wl + 1) * sizeof(char));
-    if (chr == NULL) {
-      while (index) {
+    if (chr == NULL) 
+    {
+      while (index >= 0) {
         free(ptr[index]);
         index--;
       }
+      free(ptr);
       return (NULL);
     }
     while (s[i] == c)

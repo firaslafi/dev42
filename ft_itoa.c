@@ -6,7 +6,7 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 03:10:19 by flafi             #+#    #+#             */
-/*   Updated: 2023/04/14 02:16:28 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/14 23:31:30 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,31 @@ static int	ft_nalloc(int n)
 	return (i + 1);
 }
 
+static void	fill_num(char *s, int i, int n)
+{
+	while (n > 0)
+	{
+		s[i] = n % 10 + '0';
+		n = n / 10;
+		i--;
+	}
+}
+
+static char	*ft_finish(char *s, int num_to_alloc, int sign)
+{
+	s[num_to_alloc + (sign < 0)] = '\0';
+	if (sign == -1)
+	{
+		s[0] = '-';
+		return (s);
+	}
+	return (s);
+}
+
 char	*ft_itoa(int n)
 {
 	int		sign;
 	int		i;
-	int		num;
 	char	*s;
 
 	i = 0;
@@ -40,30 +60,18 @@ char	*ft_itoa(int n)
 		return (ft_strdup("-2147483648"));
 	if (n == -0)
 		return (ft_strdup("0"));
-	num = ft_nalloc(n);
-	if (n <= 0)
+	if (n < 0)
 	{
 		sign *= -1;
 		n *= sign;
 	}
 	if (n == 1 || sign > 0)
-		s = malloc(num + 1);
+		s = malloc(ft_nalloc(n) + 1);
 	else
-		s = malloc(num + 2);
+		s = malloc(ft_nalloc(n) + 2);
 	if (!s)
 		return (NULL);
-		i = num - (sign > 0);
-	while (n > 0)
-	{
-		s[i] = n % 10 + '0';
-		n = n / 10;
-		i--;
-	}
-	s[num + (sign < 0)] = '\0';
-	if (sign == -1)
-	{
-		s[0] = '-';
-		return (s);
-	}
-	return (s);
+	i = ft_nalloc(n) - (sign > 0);
+	fill_num(s, i, n);
+	return (ft_finish(s, ft_nalloc(n), sign));
 }

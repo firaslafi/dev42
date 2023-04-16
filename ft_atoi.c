@@ -6,13 +6,13 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 22:54:23 by flafi             #+#    #+#             */
-/*   Updated: 2023/04/12 18:10:05 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/16 03:46:07 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(const char *str)
+static int	ft_isspace(const char *str)
 {
 	if (*str == ' ' || *str == '\n' || *str == '\t' || *str == '\f'
 		|| *str == '\r' || *str == '\v')
@@ -20,7 +20,7 @@ int	ft_isspace(const char *str)
 	return (0);
 }
 
-int	ft_issign(const char *str)
+static int	ft_issign(const char *str)
 {
 	if (*str == '-' || *str == '+')
 		return (1);

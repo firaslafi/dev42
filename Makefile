@@ -6,7 +6,7 @@
 #    By: flafi <flafi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/12 22:04:39 by flafi             #+#    #+#              #
-#    Updated: 2023/04/15 23:42:21 by flafi            ###   ########.fr        #
+#    Updated: 2023/04/16 03:52:03 by flafi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ bonus: $(OBJS_B)
 clean:
 	rm -f $(OBJS)
 	rm -f $(OBJS_B)
-	echo "Object Files are deleted"
+	echo "$(RED)Object Files are deleted$(DEF_COLOR)"
 
 fclean: clean
 	rm -rf $(NAME)

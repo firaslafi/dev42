@@ -6,13 +6,13 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:34:20 by flafi             #+#    #+#             */
-/*   Updated: 2023/04/14 02:09:02 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/16 03:47:48 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_cmp(char *s, int c)
+static int	ft_cmp(char *s, int c)
 {
 	if (*s == (char) c)
 		return (1);

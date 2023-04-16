@@ -6,7 +6,7 @@
 /*   By: flafi <flafi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:26:52 by flafi             #+#    #+#             */
-/*   Updated: 2023/04/16 00:31:20 by flafi            ###   ########.fr       */
+/*   Updated: 2023/04/16 02:38:11 by flafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,28 +68,15 @@ static size_t	word_len(const char *s, size_t i, char c)
 	return (len);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**copy_free(char *chr, char **ptr, char const *s, char c)
 {
-	char	*chr;
-	int i, index;
-	char	**ptr;
+	int	index;
 	int	wl;
-	int	wc;
+	int	i;
 
-	if (!s)
-		return (NULL);
-	wc = word_count(s, c);
-	ptr = (char **)malloc((wc + 1) * sizeof(char *));
-	if (ptr == NULL)
-		return (NULL);
-	if (wc == 0)
-	{
-		ptr[0] = NULL;
-		return (ptr);
-	}
-	i = 0;
 	index = 0;
-	while (wc--)
+	i = 0;
+	while (index < (int)word_count(s, c))
 	{
 		wl = word_len(s, i, c);
 		chr = (char *)malloc((wl + 1) * sizeof(char));
@@ -105,9 +92,23 @@ char	**ft_split(char const *s, char c)
 		ft_strncpy(chr, &s[i], wl);
 		chr[wl] = '\0';
 		i += wl;
-		ptr[index] = chr;
-		index++;
+		ptr[index++] = chr;
 	}
-	ptr[index] = NULL;
-	return (ptr);
+	return (ptr[index] = NULL, ptr);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	*chr;
+	char	**ptr;
+	int		wc;
+
+	chr = NULL;
+	if (!s)
+		return (NULL);
+	wc = word_count(s, c);
+	ptr = (char **)malloc((wc + 1) * sizeof(char *));
+	if (ptr == NULL)
+		return (NULL);
+	return (copy_free(chr, ptr, s, c));
 }
